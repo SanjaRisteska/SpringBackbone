@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Backbone App</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <section class="header">
+        <ul class="menu">
+            <li class="logo" style="float: left"><img id="cartIcon" src="img/logo.png" style="width: 324px; height: 68px;"></li>
+            <li><a href="#"><img id="cartIcon" src="img/cart.png">My cart</a></li>
+        </ul>
+    </section>
+
+    <section class="topics">
+        <div id="filters">
+            <div id="sort">Sort by:
+                <select id="sort-dropdown">
+                  <option value="Price (lowest->highest)">Price (lowest->highest)</option>
+                  <option value="Price (highest->lowest)">Price (highest->lowest)</option>
+                  <option value="poduct name (A-Z)">Poduct name (A-Z)</option>
+                  <option value="poduct name (Z-A)">Poduct name (Z-A)</option>
+                </select>
+            </div>
+
+            <div id="filter">Filter by manufacturer:    
+                <select id="filter-dropdown">
+                  <option value="samsung">Samsung</option>
+                  <option value="apple">Apple</option>
+                  <option value="huawei">huawei</option>
+                  <option value="lg">lg</option>
+                </select>
+            </div>
+        </div>
+        <div id="allPhones"></div>
+
+        <script id="phoneElement" type="text/template">
+              <img src="<%= img %>" alt="<%= model %>" class="image"/>
+                <ul>
+                    <li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
+                    <li class="phoneInfo"><strong>Model:</strong> <%= model %></li>
+                    <li class="phoneInfo"><strong>Price:</strong> <%= price %></li>
+                    <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
+                </ul>
+                <a href="#<%= link %>" id="more-info-btn" class="button js-button" role="button">More info</a>
+                
+        </script>
+        
+        <div id="phonePreviewSection">
+        
+        
+         <script id="phonePreview" type="text/template">
+              <div id="phone-preview">
+              <img src="<%= img %>" alt="<%= model %>" class="image"/>
+                <ul>
+                    <li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
+                    <li class="phoneInfo"><strong>Model:</strong> <%= model %></li>
+                    <li class="phoneInfo"><strong>Price:</strong> <%= price %></li>
+                    <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
+                    <li class="phoneInfo"><strong>Size:</strong> <%= size %></li>
+                    <li class="phoneInfo"><strong>Weight:</strong> <%= weight %></li>
+                    <li class="phoneInfo"><strong>CPU:</strong> <%= CPU %></li>
+                    <li class="phoneInfo"><strong>Primary camera:</strong> <%= primary_camera %></li>
+                    <li class="phoneInfo"><strong>Secondary camera:</strong> <%= secondary_camera %></li>
+                </ul>
+              <div>
+        </script>
+
+    </section>
+    <section class="footer">
+       <p> Copyright &copy; 2017 Seavus</p>
+    </section>
+
+
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/libs/underscore.js"></script>
+    <script src="js/libs/backbone.js"></script>
+
+    <script type="text/javascript" src="resource/phonesData.js"></script>
+
+    <script src="js/models/SinglePhoneModel.js"></script> 
+    <script src="js/models/PhonePreviewModel.js"></script>
+    <script src="js/views/SinglePhoneView.js"></script> 
+    <script src="js/views/AllPhonesView.js"></script> 
+    <script src="js/views/PhonePreviewView.js"></script>
+    <script src="js/collections/AllPhonesCollection.js"></script> 
+    <script src="js/routers/Router.js"></script>
+    <script src="js/main/PhoneStoreApp.js"></script>
+
+</body>
+</html>
