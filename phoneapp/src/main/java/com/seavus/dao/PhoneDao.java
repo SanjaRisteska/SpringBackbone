@@ -10,14 +10,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.seavus.entities.Phone;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+/*
+  Note to Natasa & Sanja -> implement PhoneDao interface and proper Implementation
+
+*/
 
 @Component
 public class PhoneDao {
-	
-	@Autowired
+	private final static Logger logger = LoggerFactory.getLogger(PhoneDao.class);
+        
 	private SessionFactory sessionFactory;
-	
+	@Autowired
 	public PhoneDao(SessionFactory sessionFactory){
 		this.sessionFactory = sessionFactory;
 	}
@@ -35,6 +41,7 @@ public class PhoneDao {
 			tx.commit();
 		} catch (RuntimeException e) {
 			if (tx != null) {
+                                logger.debug("Transaction rollback", e);
 				tx.rollback();
 			}
 		} finally {
@@ -54,6 +61,7 @@ public class PhoneDao {
 
 		} catch (RuntimeException e) {
 			if (transaction != null) {
+                                logger.debug("Transaction rollback", e);
 				transaction.rollback();
 			}
 

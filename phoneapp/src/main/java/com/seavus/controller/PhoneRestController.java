@@ -15,8 +15,12 @@ import com.seavus.services.PhoneService;
 @RequestMapping("/api/phones")
 public class PhoneRestController {
 
-	@Autowired
 	private PhoneService phoneService;
+        
+        @Autowired
+        public PhoneRestController(PhoneService phoneService){
+            this.phoneService = phoneService;
+        }
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Phone> getAllPhones(){

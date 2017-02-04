@@ -11,8 +11,11 @@ import com.seavus.entities.Phone;
 @Service
 public class PhoneService {
 	
-	@Autowired
 	private PhoneDao phoneDao;
+        @Autowired
+        public PhoneService(PhoneDao phoneDao){
+            this.phoneDao = phoneDao;
+        }
 	
 	public List<Phone> getAllPhones(){
 		return this.phoneDao.getAllPhones();
