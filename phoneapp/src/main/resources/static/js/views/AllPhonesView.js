@@ -3,6 +3,10 @@ var app = app || {};
 app.allPhonesView = Backbone.View.extend({
 
     tagName: "section",
+    
+    events: {
+    	
+    },
 
     initialize: function(){
         this.collection.bind("reset", _.bind(this.render, this));
@@ -15,6 +19,16 @@ app.allPhonesView = Backbone.View.extend({
     render: function(){
         this.collection.each(this.addPhone, this);
         $("#allPhones").html(this.el);
+    },
+    
+    postLayoutRender: function(phoneCollection){
+    	this.$el.empty();
+    	if(phoneCollection.length > 0){
+    		phoneCollection.each(this.addPhone, this);
+        	$("#allPhones").html(this.el);
+    	}else{
+    		this.render();
+    	}
     },
     
     addPhone: function(phone){

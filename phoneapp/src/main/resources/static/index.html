@@ -17,19 +17,21 @@
         <div id="filters">
             <div id="sort">Sort by:
                 <select id="sort-dropdown">
-                  <option value="Price (lowest->highest)">Price (lowest->highest)</option>
-                  <option value="Price (highest->lowest)">Price (highest->lowest)</option>
-                  <option value="poduct name (A-Z)">Poduct name (A-Z)</option>
-                  <option value="poduct name (Z-A)">Poduct name (Z-A)</option>
+                	<option value="all">All</option>
+                  	<option value="price_ascending">Price (lowest->highest)</option>
+                  	<option value="price_descending">Price (highest->lowest)</option>
+                  	<option value="model_ascending">Model (A-Z)</option>
+                  	<option value="model_descending">Model (Z-A)</option>
                 </select>
             </div>
 
             <div id="filter">Filter by manufacturer:    
                 <select id="filter-dropdown">
-                  <option value="samsung">Samsung</option>
-                  <option value="apple">Apple</option>
-                  <option value="huawei">huawei</option>
-                  <option value="lg">lg</option>
+                	<option value="all">All</option>
+					<option value="samsung">Samsung</option>
+                  	<option value="apple">Apple</option>
+                  	<option value="huawei">Huawei</option>
+                  	<option value="lg">LG</option>
                 </select>
             </div>
         </div>
@@ -38,8 +40,8 @@
         <script id="phoneElement" type="text/template">
               <img src="<%= img %>" alt="<%= model %>" class="image"/>
                 <ul>
-                    <li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
                     <li class="phoneInfo"><strong>Model:</strong> <%= model %></li>
+ 					<li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
                     <li class="phoneInfo"><strong>Price:</strong> <%= price %></li>
                     <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
                 </ul>
@@ -53,7 +55,7 @@
          <script id="phonePreview" type="text/template">
               <div id="phone-preview">
               <img src="<%= img %>" alt="<%= model %>" class="image"/>
-                <ul>
+                <ul id="previewInfo">
                     <li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
                     <li class="phoneInfo"><strong>Model:</strong> <%= model %></li>
                     <li class="phoneInfo"><strong>Price:</strong> <%= price %></li>
@@ -87,6 +89,7 @@
     <script src="js/collections/AllPhonesCollection.js"></script> 
     <script src="js/routers/Router.js"></script>
     <script src="js/main/PhoneStoreApp.js"></script>
+    <script src="js/handlers/FilterSortHandler.js"></script>
 
 </body>
 </html>

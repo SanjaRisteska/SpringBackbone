@@ -12,7 +12,7 @@ public class Phone {
 	private int id;
 	private String manufacturer;
 	private String model;
-	private String price;
+	private int price;
 	private String color; 
 	private String img;
 	private String size;
@@ -25,7 +25,7 @@ public class Phone {
 	public Phone(){}
 
 	
-	public Phone(String manufacturer, String model, String price, String color, String img, String size, String weight,
+	public Phone(String manufacturer, String model, int price, String color, String img, String size, String weight,
 			String cpu, String primaryCamera, String secondaryCamera, String link) {
 		this.manufacturer = manufacturer;
 		this.model = model;
@@ -64,11 +64,11 @@ public class Phone {
 		this.model = model;
 	}
 	
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

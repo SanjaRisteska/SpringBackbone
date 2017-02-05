@@ -39,7 +39,7 @@ var data = [
 	"model" : "P9",
 	"price" : "400$",
 	"color" : "Rose gold",
-    "img" : "img/huaweiP9.png",
+    "img" : "img/	.png",
     "link" : "HuaweiP9",
     "size" : "5.2 inches",
     "weight" : "144 g",
