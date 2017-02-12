@@ -3,7 +3,7 @@ var app = app || {};
 app.singlePhoneView = Backbone.View.extend({
 
     tagName: "article",
-    className: "phoneItem",
+    className: "phoneItem col-md-3",
     
     events: {},
     
