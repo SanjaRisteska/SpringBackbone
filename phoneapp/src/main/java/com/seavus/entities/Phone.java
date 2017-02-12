@@ -13,8 +13,8 @@ public class Phone {
 	@Id
 	@GeneratedValue
 	private int id;
-	//@OneToOne(mappedBy = "phone")
-	//private Cart cart;
+	@OneToOne(mappedBy = "phone")
+	private Cart cart;
 	private String manufacturer;
 	private String model;
 	private int price;
