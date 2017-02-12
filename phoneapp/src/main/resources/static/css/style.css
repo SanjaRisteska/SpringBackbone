@@ -45,9 +45,14 @@ hr {
 	background-color: #383838;
 }
 
+#phonePreviewSection{
+	margin-top: 60px;
+    padding: 20px;
+}
+
 #previewInfo{
-	float: right;
-	padding: 10px;
+	padding: 20px;
+    margin-top: 15px;
 }
 
 #sort-dropdown, #filter-dropdown {
@@ -82,6 +87,8 @@ hr {
 	padding-left: 50px;
 	padding-right: 50px;
 	height: 80px;
+    
+    bottom: 0;
 }
 
 .footer p {
@@ -104,11 +111,31 @@ hr {
     margin-top: 50px;
 }
 
+#phonePreview{
+    margin-top: 100px;
+    min-height: 73vh;
+}
+
 .image {
 	max-width: 150px;
 	max-height: 200px;
 	margin: auto;
 	padding: 10px;
+}
+
+.imagePreview{
+    max-width: 250px;
+	max-height: 300px;
+	margin: auto;
+	padding: 10px;
+}
+
+.phoneInfo{
+    
+}
+
+.previewTitle{
+	font-size:20px;
 }
 
 .button {

@@ -72,14 +72,15 @@
 		</script>
         
         
-        <div id="phonePreviewSection"></div>
+        <div id="phonePreviewSection" class="container main-container"></div>
         
          <script id="phonePreview" type="text/template">
-              <div id="phone-preview">
-              <img src="<%= img %>" alt="<%= model %>" class="image"/>
+            <div class="col-md-4">
+              	<img src="<%= img %>" alt="<%= model %>" class="imagePreview center-block"/>
+			</div>
+			<div class="col-md-5">
+				<strong class="previewTitle"><%= manufacturer %> <%= model %></strong>
                 <ul id="previewInfo">
-                    <li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
-                    <li class="phoneInfo"><strong>Model:</strong> <%= model %></li>
                     <li class="phoneInfo"><strong>Price:</strong> $<%= price %></li>
                     <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
                     <li class="phoneInfo"><strong>Size:</strong> <%= size %></li>
@@ -88,8 +89,10 @@
                     <li class="phoneInfo"><strong>Primary camera:</strong> <%= primaryCamera %></li>
                     <li class="phoneInfo"><strong>Secondary camera:</strong> <%= secondaryCamera %></li>
                 </ul>
+			</div>
+			<div class="col-md-3">
 				<a href="#<%= link %>" id="add-btn" class="button js-button" role="button">Add to cart</a>
-              <div>
+            </div>
         </script>
 
   
