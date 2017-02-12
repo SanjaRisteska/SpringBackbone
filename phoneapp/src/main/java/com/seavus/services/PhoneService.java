@@ -26,8 +26,8 @@ public class PhoneService {
 		this.phoneDao.savePhone(phone);
 	}
 
-	public List<Cart> getChartProducts() {
-		return this.phoneDao.getChartProducts();
+	public List<Cart> getCartProducts() {
+		return this.phoneDao.getCartProducts();
 	}
 
 }

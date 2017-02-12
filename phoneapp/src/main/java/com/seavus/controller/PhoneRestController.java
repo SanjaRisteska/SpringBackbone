@@ -34,8 +34,8 @@ public class PhoneRestController {
 		return phone;
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/chart/products")
-	public List<Cart> getChartProducts(){
-		return this.phoneService.getChartProducts();
+	@RequestMapping(method = RequestMethod.GET, value = "/cart/products")
+	public List<Cart> getCartProducts(){
+		return this.phoneService.getCartProducts();
 	}
 }

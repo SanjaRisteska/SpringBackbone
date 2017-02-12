@@ -15,7 +15,7 @@ public class Cart {
 	private int id;
 	@OneToOne
 	@JoinColumn(name = "product_id")
-	private Phone phone;
+	public Phone phone;
 	private int quantity;
 	
 	public Cart(){}
@@ -32,10 +32,10 @@ public class Cart {
 		this.id = id;
 	}
 	
-	public Phone getProduct() {
+	public Phone getPhone() {
 		return phone;
 	}
-	public void setProduct(Phone phone) {
+	public void setPhone(Phone phone) {
 		this.phone = phone;
 	}
 	public int getQuantity() {

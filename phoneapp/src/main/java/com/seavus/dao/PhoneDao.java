@@ -72,13 +72,13 @@ public class PhoneDao {
 		
 	}
 
-	public List<Cart> getChartProducts() {
+	public List<Cart> getCartProducts() {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		List<Cart> results = null;
 		try {
 			tx = session.beginTransaction();
-			String hql = "FROM chart";
+			String hql = "FROM cart";
 			Query query = session.createQuery(hql);
 			results = query.list();
 			tx.commit();
