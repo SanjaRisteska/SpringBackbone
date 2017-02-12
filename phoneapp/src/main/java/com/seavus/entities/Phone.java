@@ -3,13 +3,18 @@ package com.seavus.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "phone")
 public class Phone {
 
 	@Id
 	@GeneratedValue
 	private int id;
+	@OneToOne(mappedBy = "phone")
+	private Cart cart;
 	private String manufacturer;
 	private String model;
 	private int price;
@@ -21,7 +26,7 @@ public class Phone {
 	private String primary_camera;
 	private String secondary_camera;
 	private String link;
-	
+
 	public Phone(){}
 
 	
@@ -100,7 +105,7 @@ public class Phone {
 		return weight;
 	}
 
-	public void setWeght(String weight) {
+	public void setWeight(String weight) {
 		this.weight = weight;
 	}
 

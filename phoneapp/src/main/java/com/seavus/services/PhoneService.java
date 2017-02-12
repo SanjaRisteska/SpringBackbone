@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.seavus.dao.PhoneDao;
+import com.seavus.entities.Cart;
 import com.seavus.entities.Phone;
 
 @Service
@@ -23,6 +24,10 @@ public class PhoneService {
 
 	public void savePhone(Phone phone) {
 		this.phoneDao.savePhone(phone);
+	}
+
+	public List<Cart> getChartProducts() {
+		return this.phoneDao.getChartProducts();
 	}
 
 }

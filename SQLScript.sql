@@ -43,13 +43,13 @@ INSERT INTO phone.public.phone (manufacturer, model, price, color, img, size, we
 INSERT INTO phone.public.phone (manufacturer, model, price, color, img, size, weight, cpu, primary_camera, secondary_camera, link) VALUES ('Apple', 'iPhone 7', 820, 'Black', 'img/iphone.png','4.7 inches', '138 g', 'Quad-core 2.34 GHz (2x Hurricane + 2x Zephyr)', '12 MP, f/1.8, 28mm, phase detection autofocus, OIS, quad-LED (dual tone) flash', '7 MP, f/2.2, 32mm, 1080p@30fps, 720p@240fps, face detection, HDR, panorama', 'iPhone7');
 INSERT INTO phone.public.phone (manufacturer, model, price, color, img, size, weight, cpu, primary_camera, secondary_camera, link) VALUES ('Huawei', 'P9', 300, 'White', 'img/nexus5.png','4.95 inches', '130 g', 'Quad-core 2.3 GHz Krait 400', '8 MP, f/2.4, 30mm, autofocus, OIS, LED flash', '1.3 MP, f/2.4, 1/6" sensor size, 1.9µm pixel size', 'Nexus5');
 
-CREATE TABLE phone.public.chart
+CREATE TABLE phone.public.cart
 (
   id integer NOT NULL DEFAULT nextval('"Phone_id_seq"'::regclass),
   product_id integer,
   quantity integer,
-  CONSTRAINT "Chart_pkey" PRIMARY KEY (id),
-  CONSTRAINT fk_chart_product FOREIGN KEY (product_id)
+  CONSTRAINT "cart_pkey" PRIMARY KEY (id),
+  CONSTRAINT fk_cart_product FOREIGN KEY (product_id)
       REFERENCES phone.public.phone (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 )
