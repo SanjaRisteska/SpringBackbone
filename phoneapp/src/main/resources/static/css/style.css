@@ -1,35 +1,29 @@
 body {
-	background: url("../img/background.jpg") no-repeat;
-	color: white;
+	background-color: #eeeeee;
 	font-family: Tahoma;
-	margin: 0;
+
 }
 
-ul.menu {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-top: 20px;
+.nav-menu{
+  
+    border-width: 0 0 1px;
+    background-color: #383838;
 }
 
-.menu li {
-	float: right;
+.logo{
+	padding-top: 10px;
 }
 
-.menu li a {
-	display: block;
-	color: #D50000;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
+#logo-text{
+    color: white;
+    margin-left: 10px;
+    font-size: 16px;
 }
 
-.menu #cartIcon {
-	width: 20px;
-	height: 20px;
+
+#cartIcon {
+	width: 30px;
+	height: 30px;
 }
 
 h1 {
@@ -46,14 +40,19 @@ hr {
 }
 
 #filters {
-	width: 100%;
-	margin: auto;
-	padding-top: 20px;
+	margin-top: 60px;
+    padding: 20px;
+	background-color: #383838;
+}
+
+#phonePreviewSection{
+	margin-top: 60px;
+    padding: 20px;
 }
 
 #previewInfo{
-	float: right;
-	padding: 10px;
+	padding: 20px;
+    margin-top: 15px;
 }
 
 #sort-dropdown, #filter-dropdown {
@@ -68,55 +67,53 @@ hr {
 	background-color: white;
 }
 
-.topics {
-	max-width: 80%;
-	margin: auto;
-	color: black;
-	text-align: left;
-	padding-bottom: 100px;
+#sort{
+    color: white;
+    padding-left: 300px;
 }
 
-.topics ul {
-	list-style-type: none;
+#filter{
+    color: white;
 }
 
-.topics span {
-	color: #3BB9FF;
+#button-more{
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
-.topics h1, .topics span {
-	font-size: 20pt;
-}
-
-.topics p {
-	margin-top: 0;
-}
-
-.topics div {
-	display: inline-block;
-	margin: 15px;
-}
-
-.topics td {
-	padding-right: 10px;
-}
 
 .footer {
-	background-color: #333;
+	background-color: #383838;
 	padding-left: 50px;
 	padding-right: 50px;
 	height: 80px;
+    
+    bottom: 0;
 }
 
 .footer p {
 	padding-top: 30px;
 	margin: 0;
 	text-align: center;
+    color: white;   
 }
 
 .phoneItem {
 	display: inline-block;
 	margin: 10px 0px;
+}
+
+#phoneElement{
+    margin: auto;
+}
+
+#allPhones{
+    margin-top: 50px;
+}
+
+#phonePreview{
+    margin-top: 100px;
+    min-height: 73vh;
 }
 
 .image {
@@ -126,22 +123,33 @@ hr {
 	padding: 10px;
 }
 
+.imagePreview{
+    max-width: 250px;
+	max-height: 300px;
+	margin: auto;
+	padding: 10px;
+}
+
+.phoneInfo{
+    
+}
+
+.previewTitle{
+	font-size:20px;
+}
+
 .button {
 	background-color: darkred;
 	border-radius: 5px;
 	color: white;
 	padding: .5em;
 	text-decoration: none;
-	margin-left: 3em;
+	margin-left: 6.2em;
 }
 
 .button:focus, .button:hover {
-	background-color: #D50000;
+	color: white;
+    background-color: black;
+    text-decoration: none;
 }
 
-@media screen and (max-width:1280px) {
-	.topics div {
-		display: block;
-		width: 100%;
-	}
-}

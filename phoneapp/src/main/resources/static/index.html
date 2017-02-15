@@ -2,20 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Spring Backbone App</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <section class="header">
-        <ul class="menu">
-            <li class="logo" style="float: left"><img id="cartIcon" src="img/logo.png" style="width: 324px; height: 68px;"></li>
-            <li><a href="#"><img id="cartIcon" src="img/cart.png">My cart</a></li>
-        </ul>
-    </section>
 
-    <section class="topics">
-        <div id="filters">
-            <div id="sort">Sort by:
+ 	<nav class="navbar navbar-inverse navbar-fixed-top nav-menu" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            	<ul class="nav navbar-nav">
+                        <li class="logo">
+                            <img id="logo" src="img/logo.png" style="width: 180px; height: 40px;">
+                    	</li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"><img id="cartIcon" src="img/cart.png">My cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container-fluid">
+        <div id="filters" class="row">
+            <div id="sort" class="col-md-6">Sort by:
                 <select id="sort-dropdown">
                 	<option value="all">All</option>
                   	<option value="price_ascending">Price (lowest->highest)</option>
@@ -25,7 +40,7 @@
                 </select>
             </div>
 
-            <div id="filter">Filter by manufacturer:    
+            <div id="filter" class="col-md-6">Filter by manufacturer:    
                 <select id="filter-dropdown">
                 	<option value="all">All</option>
 					<option value="samsung">Samsung</option>
@@ -35,29 +50,37 @@
                 </select>
             </div>
         </div>
-        <div id="allPhones"></div>
+    </div>
+        
+    <div class="container main-container">
+    	<div id="allPhones" class="row"></div>
+    </div>
 
         <script id="phoneElement" type="text/template">
+			<div class="thumbnail">
               <img src="<%= img %>" alt="<%= model %>" class="image"/>
-                <ul>
+                <ul class="text-center list-unstyled">
                     <li class="phoneInfo"><strong>Model:</strong> <%= model %></li>
  					<li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
                     <li class="phoneInfo"><strong>Price:</strong> $<%= price %></li>
                     <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
                 </ul>
-                <a href="#<%= link %>" id="more-info-btn" class="button js-button" role="button">More info</a>
-                
-        </script>
+				<div id="button-more">
+                	<a href="#<%= link %>" id="more-info-btn" class="button js-button" role="button">More info</a>  
+        		</div>
+			</div>
+		</script>
         
-        <div id="phonePreviewSection">
         
+        <div id="phonePreviewSection" class="container main-container"></div>
         
          <script id="phonePreview" type="text/template">
-              <div id="phone-preview">
-              <img src="<%= img %>" alt="<%= model %>" class="image"/>
+            <div class="col-md-4">
+              	<img src="<%= img %>" alt="<%= model %>" class="imagePreview center-block"/>
+			</div>
+			<div class="col-md-5">
+				<strong class="previewTitle"><%= manufacturer %> <%= model %></strong>
                 <ul id="previewInfo">
-                    <li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
-                    <li class="phoneInfo"><strong>Model:</strong> <%= model %></li>
                     <li class="phoneInfo"><strong>Price:</strong> $<%= price %></li>
                     <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
                     <li class="phoneInfo"><strong>Size:</strong> <%= size %></li>
@@ -66,11 +89,15 @@
                     <li class="phoneInfo"><strong>Primary camera:</strong> <%= primaryCamera %></li>
                     <li class="phoneInfo"><strong>Secondary camera:</strong> <%= secondaryCamera %></li>
                 </ul>
-              <div>
+			</div>
+			<div class="col-md-3">
+				<a href="<%= link %>" id="add-btn" class="button js-button" role="button">Add to cart</a>
+            </div>
         </script>
 
-    </section>
-    <section class="footer">
+  
+    
+    <section class="col-md-12 footer">
        <p> Copyright &copy; 2017 Seavus</p>
     </section>
 
@@ -78,6 +105,7 @@
     <script src="js/libs/jquery.js"></script>
     <script src="js/libs/underscore.js"></script>
     <script src="js/libs/backbone.js"></script>
+     <script src="js/libs/bootstrap.js"></script>
 
     <script type="text/javascript" src="resource/phonesData.js"></script>
 
