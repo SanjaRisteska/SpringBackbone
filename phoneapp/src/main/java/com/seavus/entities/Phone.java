@@ -1,15 +1,12 @@
 package com.seavus.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Phone {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING)
+public class Phone extends EntityClass {
 
-	@Id
-	@GeneratedValue
-	private int id;
 	private String manufacturer;
 	private String model;
 	private int price;
@@ -38,14 +35,6 @@ public class Phone {
 		this.primary_camera = primaryCamera;
 		this.secondary_camera = secondaryCamera;
 		this.link = link;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getManufacturer() {

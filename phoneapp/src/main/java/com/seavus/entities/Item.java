@@ -1,17 +1,12 @@
 package com.seavus.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
-public class Item {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING)
+public class Item extends EntityClass{
 
-	@Id
-	@GeneratedValue
-	private int id;
 	@ManyToOne
 	private Phone phone;
 	private int quantity;
@@ -23,14 +18,6 @@ public class Item {
 		super();
 		this.phone = phone;
 		this.quantity = quantity;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public Phone getPhone() {
