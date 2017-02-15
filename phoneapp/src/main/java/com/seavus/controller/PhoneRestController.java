@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.seavus.entities.Cart;
+import com.seavus.entities.Item;
 import com.seavus.entities.Phone;
 import com.seavus.services.PhoneService;
 
@@ -37,5 +38,10 @@ public class PhoneRestController {
 	@RequestMapping(method = RequestMethod.GET, value = "/cart/products")
 	public List<Cart> getCartProducts(){
 		return this.phoneService.getCartProducts();
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/items")
+	public List<Item> getItems(){
+		return this.phoneService.getAllItems();
 	}
 }

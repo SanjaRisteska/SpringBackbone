@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.seavus.dao.PhoneDao;
 import com.seavus.entities.Cart;
+import com.seavus.entities.Item;
 import com.seavus.entities.Phone;
 
 @Service
@@ -28,6 +29,10 @@ public class PhoneService {
 
 	public List<Cart> getCartProducts() {
 		return this.phoneDao.getCartProducts();
+	}
+
+	public List<Item> getAllItems() {
+		return this.phoneDao.getAllItems();
 	}
 
 }

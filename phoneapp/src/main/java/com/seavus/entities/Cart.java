@@ -4,44 +4,42 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.ManyToOne;
 
 @Entity
-@Table(name = "cart")
 public class Cart {
+
 	@Id
 	@GeneratedValue
 	private int id;
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "product_id")
-	public Phone phone;
-	private int quantity;
+	private Item item;
 	
-	public Cart(){}
-	
-	public Cart(Phone phone, int quantity){
-		this.phone = phone;
-		this.quantity = quantity;
+	public Cart() {
 	}
-	
+
+	public Cart(Item item) {
+		super();
+		this.item = item;
+	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
+	}
+
 	
-	public Phone getPhone() {
-		return phone;
-	}
-	public void setPhone(Phone phone) {
-		this.phone = phone;
-	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+	
 }

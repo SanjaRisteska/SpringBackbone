@@ -3,18 +3,13 @@ package com.seavus.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "phone")
 public class Phone {
 
 	@Id
 	@GeneratedValue
 	private int id;
-	@OneToOne(mappedBy = "phone")
-	private Cart cart;
 	private String manufacturer;
 	private String model;
 	private int price;
