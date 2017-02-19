@@ -5,7 +5,7 @@ app.allPhonesView = Backbone.View.extend({
     tagName: "section",
     
     events: {
-    	
+    
     },
 
     initialize: function(){

@@ -9,25 +9,29 @@
 </head>
 <body>
 
- 	<nav class="navbar navbar-inverse navbar-fixed-top nav-menu" role="navigation">
+	<!-- NAVIGATION MENU -->
+	<div id="navigation_menu"></div>
+
+ 	<script id="menu" type="text/template">
         <div class="container-fluid">
             <div class="navbar-header">
             	<ul class="nav navbar-nav">
-                        <li class="logo">
+                        <li id="logo" class="logo">
                             <img id="logo" src="img/logo.png" style="width: 180px; height: 40px;">
                     	</li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#"><img id="cartIcon" src="img/cart.png">My cart</a>
+                    <li id="my_cart">
+                        <a href="#<%= link %>"><img id="cartIcon" src="img/cart.png">My cart</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </script>
 
+	<!-- FILTER AND SORT -->
      <div class="container-fluid">
         <div id="filters" class="row">
             <div id="sort" class="col-md-6">Sort by:
@@ -52,51 +56,64 @@
         </div>
     </div>
         
+        
+    <!-- ALL PHONES -->
     <div class="container main-container">
     	<div id="allPhones" class="row"></div>
     </div>
 
-        <script id="phoneElement" type="text/template">
-			<div class="thumbnail">
-              <img src="<%= img %>" alt="<%= model %>" class="image"/>
-                <ul class="text-center list-unstyled">
-                    <li class="phoneInfo"><strong>Model:</strong> <%= model %></li>
- 					<li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
-                    <li class="phoneInfo"><strong>Price:</strong> $<%= price %></li>
-                    <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
-                </ul>
-				<div id="button-more">
-                	<a href="#<%= link %>" id="more-info-btn" class="button js-button" role="button">More info</a>  
-        		</div>
-			</div>
-		</script>
-        
-        
-        <div id="phonePreviewSection" class="container main-container"></div>
-        
-         <script id="phonePreview" type="text/template">
-            <div class="col-md-4">
-              	<img src="<%= img %>" alt="<%= model %>" class="imagePreview center-block"/>
-			</div>
-			<div class="col-md-5">
-				<strong class="previewTitle"><%= manufacturer %> <%= model %></strong>
-                <ul id="previewInfo">
-                    <li class="phoneInfo"><strong>Price:</strong> $<%= price %></li>
-                    <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
-                    <li class="phoneInfo"><strong>Size:</strong> <%= size %></li>
-                    <li class="phoneInfo"><strong>Weight:</strong> <%= weight %></li>
-                    <li class="phoneInfo"><strong>CPU:</strong> <%= cpu %></li>
-                    <li class="phoneInfo"><strong>Primary camera:</strong> <%= primaryCamera %></li>
-                    <li class="phoneInfo"><strong>Secondary camera:</strong> <%= secondaryCamera %></li>
-                </ul>
-			</div>
-			<div class="col-md-3">
-				<a href="<%= link %>" id="add-btn" class="button js-button" role="button">Add to cart</a>
-            </div>
-        </script>
+	<script id="phoneElement" type="text/template">
+		<div class="thumbnail">
+        	<img src="<%= img %>" alt="<%= model %>" class="image"/>
+            <ul class="text-center list-unstyled">
+            	<li class="phoneInfo"><strong>Model:</strong> <%= model %></li>
+ 				<li class="phoneInfo"><strong>Manufacturer:</strong> <%= manufacturer %></li>
+                <li class="phoneInfo"><strong>Price:</strong> $<%= price %></li>
+                <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
+            </ul>
+			<div id="button-more">
+               	<a href="#<%= link %>" id="more-info-btn" class="button js-button" role="button">More info</a>  
+       		</div>
+		</div>
+	</script>
 
-  
+
+	<!-- PHONE PREVIEW -->
+	<div id="phonePreviewSection" class="container main-container"></div>
+        
+   	<script id="phonePreview" type="text/template">
+   		<div class="col-md-4">
+            <img src="<%= img %>" alt="<%= model %>" class="imagePreview center-block"/>
+		</div>
+		<div class="col-md-5">
+			<strong class="previewTitle"><%= manufacturer %> <%= model %></strong>
+            <ul id="previewInfo">
+ 	           <li class="phoneInfo"><strong>Price:</strong> $<%= price %></li>
+               <li class="phoneInfo"><strong>Color:</strong> <%= color %></li>
+               <li class="phoneInfo"><strong>Size:</strong> <%= size %></li>
+               <li class="phoneInfo"><strong>Weight:</strong> <%= weight %></li>
+               <li class="phoneInfo"><strong>CPU:</strong> <%= cpu %></li>
+               <li class="phoneInfo"><strong>Primary camera:</strong> <%= primaryCamera %></li>
+               <li class="phoneInfo"><strong>Secondary camera:</strong> <%= secondaryCamera %></li>
+            </ul>
+		</div>
+		<div class="col-md-3">
+			<a href="#<%= link %>" id="add-btn" class="button js-button" role="button">Add to cart</a>
+        </div>
+	</script>
+
+
+	<!-- SHOPPING CART -->
+	<div id="shoppingCartSection" class="container main-container"></div>
+	
+	<script id="shoppingCart" type="text/template">
+		<div class="col-md-12">
+           <strong class="previewTitle"><%= title %></strong>
+		</div>
+	</script>
     
+    
+    <!-- FOOTER -->
     <section class="col-md-12 footer">
        <p> Copyright &copy; 2017 Seavus</p>
     </section>
@@ -111,9 +128,13 @@
 
     <script src="js/models/SinglePhoneModel.js"></script> 
     <script src="js/models/PhonePreviewModel.js"></script>
+    <script src="js/models/NavigationMenuModel.js"></script>
+    <script src="js/models/ShoppingCartModel.js"></script>
     <script src="js/views/SinglePhoneView.js"></script> 
     <script src="js/views/AllPhonesView.js"></script> 
     <script src="js/views/PhonePreviewView.js"></script>
+    <script src="js/views/NavigationMenuView.js"></script>
+    <script src="js/views/ShoppingCartView.js"></script>
     <script src="js/collections/AllPhonesCollection.js"></script> 
     <script src="js/routers/Router.js"></script>
     <script src="js/main/PhoneStoreApp.js"></script>

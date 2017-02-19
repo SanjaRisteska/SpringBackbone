@@ -48,6 +48,7 @@ hr {
 #phonePreviewSection{
 	margin-top: 60px;
     padding: 20px;
+    min-height: 80vh;
 }
 
 #previewInfo{
@@ -87,8 +88,6 @@ hr {
 	padding-left: 50px;
 	padding-right: 50px;
 	height: 80px;
-    
-    bottom: 0;
 }
 
 .footer p {
@@ -113,8 +112,19 @@ hr {
 
 #phonePreview{
     margin-top: 100px;
-    min-height: 73vh;
 }
+
+#shoppingCart{
+	 min-height: 73vh;
+}
+
+
+#shoppingCartSection{
+	margin-top: 60px;
+    padding: 20px;
+    min-height: 80vh;
+}
+
 
 .image {
 	max-width: 150px;
