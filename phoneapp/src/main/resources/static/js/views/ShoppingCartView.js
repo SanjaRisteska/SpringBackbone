@@ -2,18 +2,24 @@ var app = app || {};
 
 app.shoppingCartView = Backbone.View.extend({
 
-    tagName: "div",
-    className: "row",
-    
-    template: _.template($("#shoppingCart").html()),
+    tagName: "section",
     
     initialize: function(){
-      console.log("Shopping cart view is created.");  
+    	this.collection.bind("reset", _.bind(this.render, this));
+    	var that = this;
+        this.collection.fetch({
+            reset: true
+        });
     },
     
     render: function(){
-        var shoppingCartTemplate = this.template(this.model.toJSON());
-        this.$el.html(shoppingCartTemplate);
-        return this;
+    	  this.collection.each(this.addCartItem, this);
+          $("#allCartItems").html(this.el);
+    },
+    
+    addCartItem: function(cartItem){
+        var cartItemView =  new app.cartItemView({ model: cartItem });
+        this.$el.append(cartItemView.render().el);
     }
+    
 });

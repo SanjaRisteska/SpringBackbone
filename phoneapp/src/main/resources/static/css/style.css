@@ -110,8 +110,12 @@ hr {
     margin-top: 50px;
 }
 
-#phonePreview{
-    margin-top: 100px;
+.phonePreview{
+    margin-top: 50px;
+}
+
+.phonePreviewDetais{
+	padding-top: 20px;
 }
 
 #shoppingCart{
@@ -150,6 +154,24 @@ hr {
 
 .button {
 	background-color: darkred;
+	border-radius: 5px;
+	color: white;
+	padding: .5em;
+	text-decoration: none;
+	margin-left: 6.2em;
+}
+
+.button {
+	background-color: darkred;
+	border-radius: 5px;
+	color: white;
+	padding: .5em;
+	text-decoration: none;
+	margin-left: 6.2em;
+}
+
+.button-add {
+	background-color: darkgreen;
 	border-radius: 5px;
 	color: white;
 	padding: .5em;

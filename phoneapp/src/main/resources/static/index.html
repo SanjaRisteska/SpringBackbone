@@ -85,7 +85,7 @@
    		<div class="col-md-4">
             <img src="<%= img %>" alt="<%= model %>" class="imagePreview center-block"/>
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-5 phonePreviewDetais">
 			<strong class="previewTitle"><%= manufacturer %> <%= model %></strong>
             <ul id="previewInfo">
  	           <li class="phoneInfo"><strong>Price:</strong> $<%= price %></li>
@@ -104,13 +104,23 @@
 
 
 	<!-- SHOPPING CART -->
-	<div id="shoppingCartSection" class="container main-container"></div>
+	<div id="shoppingCartSection" class="container main-container">
+		<div id="allCartItems" class="row"></div>
+	</div>
 	
-	<script id="shoppingCart" type="text/template">
-		<div class="col-md-12">
-           <strong class="previewTitle"><%= title %></strong>
-		</div>
+	<script id="cartItem" type="text/template">
+       	<div class="col-md-6">
+       	<strong><%= item.phone.manufacturer %> <%= item.phone.model %> Quantity: <%= item.quantity %></strong>
+       	</div>
+		<div id="button-add" class="col-md-3">
+               	<a href="#" id="add-btn" class="button-add js-button" role="button">Add</a>  
+       	</div>
+		<div id="button-remove" class="col-md-3">
+               	<a href="#" id="remove-btn" class="button js-button" role="button">Remove</a>  
+       	</div>
+
 	</script>
+
     
     
     <!-- FOOTER -->
@@ -129,13 +139,15 @@
     <script src="js/models/SinglePhoneModel.js"></script> 
     <script src="js/models/PhonePreviewModel.js"></script>
     <script src="js/models/NavigationMenuModel.js"></script>
-    <script src="js/models/ShoppingCartModel.js"></script>
+    <script src="js/models/CartItemModel.js"></script>
     <script src="js/views/SinglePhoneView.js"></script> 
     <script src="js/views/AllPhonesView.js"></script> 
     <script src="js/views/PhonePreviewView.js"></script>
     <script src="js/views/NavigationMenuView.js"></script>
     <script src="js/views/ShoppingCartView.js"></script>
+    <script src="js/views/CartItemView.js"></script>
     <script src="js/collections/AllPhonesCollection.js"></script> 
+    <script src="js/collections/CartItemsCollection.js"></script> 
     <script src="js/routers/Router.js"></script>
     <script src="js/main/PhoneStoreApp.js"></script>
     <script src="js/handlers/FilterSortHandler.js"></script>

@@ -3,7 +3,7 @@ var app = app || {};
 app.phonePreviewView = Backbone.View.extend({
 
     tagName: "div",
-    className: "row",
+    className: "row phonePreview",
     
     template: _.template($("#phonePreview").html()),
     
