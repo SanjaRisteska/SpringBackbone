@@ -29,9 +29,22 @@ public class PhoneRestController {
 		return this.phoneService.getAllPhones();
 	}
 		
-	@RequestMapping(method = RequestMethod.POST, value = "/phone/{id}")
+	@RequestMapping(method = RequestMethod.PUT, value = "/phones/{id}")
 	public Phone savePhone(@RequestBody Phone phone){
-		this.phoneService.savePhone(phone);
+		List<Item> cartItems = phoneService.getAllItems();
+		boolean itemExists = false;
+		for (Item item : cartItems) {
+			if (item.getPhone().getId() == phone.getId()) {
+				phoneService.updateCartItem(item);
+				itemExists = true;
+				break;
+			}
+		}
+		
+		if(!itemExists) {
+			Item newItem = new Item(phone, 1);
+			phoneService.saveCartItem(newItem);
+		}
 		return phone;
 	}
 	
@@ -44,4 +57,5 @@ public class PhoneRestController {
 	public List<Item> getItems(){
 		return this.phoneService.getAllItems();
 	}
+	
 }

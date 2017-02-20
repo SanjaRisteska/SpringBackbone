@@ -7,6 +7,10 @@ app.phonePreviewView = Backbone.View.extend({
     
     template: _.template($("#phonePreview").html()),
     
+    events: {
+    	'click #add-btn' : 'addToCart'
+    },
+    
     initialize: function(){
       console.log("Phone preview view is created.");  
     },
@@ -15,5 +19,9 @@ app.phonePreviewView = Backbone.View.extend({
         var phonePreviewTemplate = this.template(this.model.toJSON());
         this.$el.html(phonePreviewTemplate);
         return this;
+    },
+    
+    addToCart: function(){
+    	this.model.save();
     }
 });

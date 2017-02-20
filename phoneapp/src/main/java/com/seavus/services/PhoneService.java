@@ -35,4 +35,13 @@ public class PhoneService {
 		return this.phoneDao.getAllItems();
 	}
 
+	public void saveCartItem(Item item) {
+		this.phoneDao.saveCartItem(item);
+	}
+
+	public void updateCartItem(Item item) {
+		this.phoneDao.updateCartItem(item);
+		
+	}
+
 }

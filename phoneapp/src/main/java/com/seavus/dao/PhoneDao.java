@@ -115,4 +115,49 @@ public class PhoneDao {
 		return results;
 	}
 
+	public void saveCartItem(Item item) {
+		System.out.println(item.toString());
+		Session session = sessionFactory.openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.save(item);
+			Cart cart = new Cart(item);
+			session.save(cart);
+			transaction.commit();
+
+		} catch (RuntimeException e) {
+			if (transaction != null) {
+                                logger.debug("Transaction rollback", e);
+				transaction.rollback();
+			}
+
+		} finally {
+			session.close();
+		}
+	}
+
+	public void updateCartItem(Item item) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = null;
+		List<Item> results = null;
+		try {
+			tx = session.beginTransaction();
+			Query query = session.createQuery("update Item set quantity = :quantity" +
+    				" where id = :id");
+query.setParameter("quantity", item.getQuantity()+1);
+query.setParameter("id", item.getId());
+int result = query.executeUpdate();
+			tx.commit();
+		} catch (RuntimeException e) {
+			if (tx != null) {
+                                logger.debug("Transaction rollback", e);
+				tx.rollback();
+			}
+		} finally {
+			session.close();
+		}
+		
+	}
+
 }
