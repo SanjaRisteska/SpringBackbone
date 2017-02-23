@@ -14,7 +14,7 @@ app.shoppingCartView = Backbone.View.extend({
     
     render: function(){
     	  this.collection.each(this.addCartItem, this);
-          $("#allCartItems").html(this.el);
+          $("#shoppingCartSection").html(this.el);
     },
     
     addCartItem: function(cartItem){

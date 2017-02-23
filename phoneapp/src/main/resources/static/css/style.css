@@ -26,6 +26,10 @@ body {
 	height: 30px;
 }
 
+.cartItem{
+    padding: 10px 0 10px 0;
+}
+
 h1 {
 	font-weight: 100;
 }
@@ -170,13 +174,20 @@ hr {
 	margin-left: 6.2em;
 }
 
+.button-remove {
+	background-color: darkred;
+	border-radius: 5px;
+	color: white;
+	padding: .5em;
+	text-decoration: none;
+}
+
 .button-add {
 	background-color: darkgreen;
 	border-radius: 5px;
 	color: white;
 	padding: .5em;
 	text-decoration: none;
-	margin-left: 6.2em;
 }
 
 .button:focus, .button:hover {

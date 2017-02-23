@@ -3,7 +3,7 @@ var app = app || {};
 app.cartItemView = Backbone.View.extend({
 
     tagName: "div",
-    className: "col-md-12",
+    className: "row cartItem",
     
     events: {},
     

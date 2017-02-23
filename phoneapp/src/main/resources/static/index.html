@@ -105,18 +105,21 @@
 
 	<!-- SHOPPING CART -->
 	<div id="shoppingCartSection" class="container main-container">
-		<div id="allCartItems" class="row"></div>
+		<!-- <div id="allCartItems" class="row"></div> -->
 	</div>
 	
 	<script id="cartItem" type="text/template">
-       	<div class="col-md-6">
-       	<strong><%= item.phone.manufacturer %> <%= item.phone.model %> Quantity: <%= item.quantity %></strong>
+       	<div class="col-md-2">
+       	<strong><%= item.phone.manufacturer %> <%= item.phone.model %> </strong>
        	</div>
-		<div id="button-add" class="col-md-3">
+		<div id="button-add" class="col-md-1 text-center">
                	<a href="#" id="add-btn" class="button-add js-button" role="button">Add</a>  
        	</div>
-		<div id="button-remove" class="col-md-3">
-               	<a href="#" id="remove-btn" class="button js-button" role="button">Remove</a>  
+		<div class="col-md-1 text-center">
+			<strong> <%= item.quantity %> </strong>
+		</div>
+		<div id="button-remove" class="col-md-1">
+               	<a href="#" id="remove-btn" class="button-remove js-button" role="button">Remove</a>  
        	</div>
 
 	</script>
