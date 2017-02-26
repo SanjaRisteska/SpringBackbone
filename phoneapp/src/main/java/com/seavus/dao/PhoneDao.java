@@ -160,4 +160,32 @@ public class PhoneDao {
 		
 	}
 
+	public void deleteCartItem(Item item) {
+		Session session = sessionFactory.openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+
+			String hql = "DELETE FROM Cart WHERE product_id = :id";
+			Query query = session.createQuery(hql);
+			query.setParameter("id", item.getId());
+			query.executeUpdate();
+			
+			hql = "DELETE FROM Item WHERE id = :id";
+			query = session.createQuery(hql);
+			query.setParameter("id", item.getId());
+			query.executeUpdate();
+
+			transaction.commit();
+
+		} catch (RuntimeException e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+
+		} finally {
+			session.close();
+		}
+	}
+
 }

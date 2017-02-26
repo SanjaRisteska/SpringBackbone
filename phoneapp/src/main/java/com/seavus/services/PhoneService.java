@@ -44,4 +44,8 @@ public class PhoneService {
 		
 	}
 
+	public void deleteCartItem(Item item) {
+		this.phoneDao.deleteCartItem(item);
+	}
+
 }

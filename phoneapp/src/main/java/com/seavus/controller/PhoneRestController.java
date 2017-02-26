@@ -47,6 +47,12 @@ public class PhoneRestController {
 		return true;
 	}
 	
+	@RequestMapping(method = RequestMethod.DELETE, value = "/item")
+	public boolean deleteItem(@RequestBody Item item){
+		this.phoneService.deleteCartItem(item);
+		return true;
+	}
+	
 	
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/cart/products")
