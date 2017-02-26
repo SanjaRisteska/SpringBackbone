@@ -41,6 +41,14 @@ public class PhoneRestController {
 		return true;
 	}
 	
+	@RequestMapping(method = RequestMethod.PUT, value = "/item")
+	public boolean updateItem(@RequestBody Item item){
+		this.phoneService.updateCartItem(item);
+		return true;
+	}
+	
+	
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/cart/products")
 	public List<Cart> getCartProducts(){
 		return this.phoneService.getCartProducts();

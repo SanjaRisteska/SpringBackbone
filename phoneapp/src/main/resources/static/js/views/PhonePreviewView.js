@@ -29,6 +29,13 @@ app.phonePreviewView = Backbone.View.extend({
         if (!cartItem){
         	cartItem = new app.cartItem({phone: this.model, quantity: 1});
         }
-    	cartItem.save();
+    	cartItem.save({},{
+    			success: function(model, response){
+    				itemsCollection.fetch({
+    					reset:true
+    				});
+    			}
+    			});
+    	
     }
 });

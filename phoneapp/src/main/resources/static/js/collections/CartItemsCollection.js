@@ -6,9 +6,7 @@ app.itemsCollection = Backbone.Collection.extend({
     url: 'http://localhost:8080/api/items',
     
     initialize: function(){
-        this.fetch({
-            reset: true
-        });
+        this.fetch({reset:true});
     }
     
 });
