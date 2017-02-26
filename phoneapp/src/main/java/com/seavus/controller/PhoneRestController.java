@@ -29,23 +29,16 @@ public class PhoneRestController {
 		return this.phoneService.getAllPhones();
 	}
 		
-	@RequestMapping(method = RequestMethod.PUT, value = "/phones/{id}")
-	public Phone savePhone(@RequestBody Phone phone){
-		List<Item> cartItems = phoneService.getAllItems();
-		boolean itemExists = false;
-		for (Item item : cartItems) {
-			if (item.getPhone().getId() == phone.getId()) {
-				phoneService.updateCartItem(item);
-				itemExists = true;
-				break;
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/item")
+	public boolean saveItem(@RequestBody Item item){
+		for(Cart cart : this.phoneService.getCartProducts()){
+			if (cart.getItem() == item) {
+				return false;
 			}
 		}
-		
-		if(!itemExists) {
-			Item newItem = new Item(phone, 1);
-			phoneService.saveCartItem(newItem);
-		}
-		return phone;
+		this.phoneService.saveCartItem(item);
+		return true;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/cart/products")
