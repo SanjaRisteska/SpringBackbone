@@ -110,13 +110,13 @@
 	
 	<script id="cartItem" type="text/template">
        	<div class="col-md-2">
-       	<strong><%= item.phone.manufacturer %> <%= item.phone.model %> </strong>
+       	<strong><%= phone.manufacturer %> <%= phone.model %> </strong>
        	</div>
 		<div id="button-add" class="col-md-1 text-center">
                	<a href="#" id="add-btn" class="button-add js-button" role="button">Add</a>  
        	</div>
 		<div class="col-md-1 text-center">
-			<strong> <%= item.quantity %> </strong>
+			<strong> <%= quantity %> </strong>
 		</div>
 		<div id="button-remove" class="col-md-1">
                	<a href="#" id="remove-btn" class="button-remove js-button" role="button">Remove</a>  
@@ -140,7 +140,6 @@
     <script type="text/javascript" src="resource/phonesData.js"></script>
 
     <script src="js/models/SinglePhoneModel.js"></script> 
-    <script src="js/models/PhonePreviewModel.js"></script>
     <script src="js/models/NavigationMenuModel.js"></script>
     <script src="js/models/CartItemModel.js"></script>
     <script src="js/views/SinglePhoneView.js"></script> 

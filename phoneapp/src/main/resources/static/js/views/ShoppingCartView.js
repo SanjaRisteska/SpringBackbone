@@ -5,11 +5,7 @@ app.shoppingCartView = Backbone.View.extend({
     tagName: "section",
     
     initialize: function(){
-    	this.collection.bind("reset", _.bind(this.render, this));
-    	var that = this;
-        this.collection.fetch({
-            reset: true
-        });
+      this.render();
     },
     
     render: function(){

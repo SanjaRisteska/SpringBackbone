@@ -29,8 +29,7 @@ app.Router = Backbone.Router.extend({
           $("#allPhones").hide();
           $("#filters").hide();
           
-          var cartItems = new app.itemsCollection();
-          var shoppingCartView = new app.shoppingCartView({collection: cartItems});
+          var shoppingCartView = new app.shoppingCartView({collection: itemsCollection});
           $("#shoppingCartSection").show();
           
     }
