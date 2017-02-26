@@ -24,18 +24,18 @@ app.phonePreviewView = Backbone.View.extend({
     addToCart: function(){
     	var that = this;
         var cartItem = _.find(itemsCollection.models, function(item){
-        		return item.get('phone').id == that.model.id
+        		return item.get('phone').id == that.model.id;
         	});
-        if (!cartItem){
+        if(cartItem){
+        	  cartItem.set('quantity', cartItem.get('quantity') + 1);
+        }else{
         	cartItem = new app.cartItem({phone: this.model, quantity: 1});
         }
     	cartItem.save({},{
-    			success: function(model, response){
-    				itemsCollection.fetch({
-    					reset:true
-    				});
-    			}
-    			});
+    		success: function(model, response){
+    			itemsCollection.fetch();
+    		}
+    	});
     	
     }
 });

@@ -17,5 +17,6 @@ app.shoppingCartView = Backbone.View.extend({
         var cartItemView =  new app.cartItemView({ model: cartItem });
         this.$el.append(cartItemView.render().el);
     }
+   
     
 });

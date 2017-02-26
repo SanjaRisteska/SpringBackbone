@@ -145,7 +145,7 @@ public class PhoneDao {
 			tx = session.beginTransaction();
 			Query query = session.createQuery("update Item set quantity = :quantity" +
     				" where id = :id");
-			query.setParameter("quantity", item.getQuantity()+1);
+			query.setParameter("quantity", item.getQuantity());
 			query.setParameter("id", item.getId());
 			int result = query.executeUpdate();
 			tx.commit();
