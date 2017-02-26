@@ -22,7 +22,10 @@ app.phonePreviewView = Backbone.View.extend({
     },
     
     addToCart: function(){
-        var cartItem = itemsColletion.findWhere({'phone': this.model});
+    	var that = this;
+        var cartItem = _.find(itemsCollection.models, function(item){
+        		return item.get('phone').id == that.model.id
+        	});
         if (!cartItem){
         	cartItem = new app.cartItem({phone: this.model, quantity: 1});
         }
