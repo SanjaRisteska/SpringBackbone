@@ -14,7 +14,7 @@ app.cartItemView = Backbone.View.extend({
     template: _.template($("#cartItem").html()),
     
     initialize: function(){
-      
+    	this.listenTo(this.model, 'sync', this.render);
     },
     
     render: function(){

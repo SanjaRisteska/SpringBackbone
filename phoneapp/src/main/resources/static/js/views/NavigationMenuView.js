@@ -12,7 +12,6 @@ app.navigationMenuView = Backbone.View.extend({
     template: _.template($("#menu").html()),
     
     initialize: function(){
-      console.log("NAV MENU");
     },
     
     render: function(){
@@ -22,7 +21,6 @@ app.navigationMenuView = Backbone.View.extend({
     },
 	
 	showMyCart: function(e){
-		console.log("MY CART");
 	}
     
 });

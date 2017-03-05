@@ -29,8 +29,13 @@ app.Router = Backbone.Router.extend({
           $("#allPhones").hide();
           $("#subheader").hide();
           
-          var shoppingCartView = new app.shoppingCartView({collection: itemsCollection});
-          $("#shoppingCartSection").show();
+          itemsCollection.fetch({
+        	  success: function(){
+        		  var shoppingCartView = new app.shoppingCartView({collection: itemsCollection});
+                  $("#shoppingCartSection").show();
+        	  }
+          });
+          
           
     }
     
