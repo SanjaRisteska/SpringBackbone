@@ -33,8 +33,11 @@
 
 	<!-- FILTER AND SORT -->
      <div class="container-fluid">
-        <div id="filters" class="row">
-            <div id="sort" class="col-md-6">Sort by:
+        <div id="filters" class="row"></div>
+    </div>
+        
+    <script id="sort" type="text/template">
+    		Sort by
                 <select id="sort-dropdown">
                 	<option value="all">All</option>
                   	<option value="price_ascending">Price (lowest->highest)</option>
@@ -42,9 +45,10 @@
                   	<option value="model_ascending">Model (A-Z)</option>
                   	<option value="model_descending">Model (Z-A)</option>
                 </select>
-            </div>
-
-            <div id="filter" class="col-md-6">Filter by manufacturer:    
+    </script>
+    
+    <script id="filter" type="text/template">
+    		Filter by manufacturer:    
                 <select id="filter-dropdown">
                 	<option value="all">All</option>
 					<option value="samsung">Samsung</option>
@@ -52,9 +56,9 @@
                   	<option value="huawei">Huawei</option>
                   	<option value="lg">LG</option>
                 </select>
-            </div>
-        </div>
-    </div>
+    </script>
+    
+    
         
         
     <!-- ALL PHONES -->
@@ -146,12 +150,16 @@
     <script src="js/models/SinglePhoneModel.js"></script> 
     <script src="js/models/NavigationMenuModel.js"></script>
     <script src="js/models/CartItemModel.js"></script>
+    <script src="js/models/SortDropdownModel.js"></script>
+    <script src="js/models/FilterDropdownModel.js"></script>
     <script src="js/views/SinglePhoneView.js"></script> 
     <script src="js/views/AllPhonesView.js"></script> 
     <script src="js/views/PhonePreviewView.js"></script>
     <script src="js/views/NavigationMenuView.js"></script>
     <script src="js/views/ShoppingCartView.js"></script>
     <script src="js/views/CartItemView.js"></script>
+    <script src="js/views/SortDropdownView.js"></script>
+    <script src="js/view/FilterDropdownView.js"></script>
     <script src="js/collections/AllPhonesCollection.js"></script> 
     <script src="js/collections/CartItemsCollection.js"></script> 
     <script src="js/routers/Router.js"></script>

@@ -1,11 +1,9 @@
 body {
 	background-color: #eeeeee;
 	font-family: Tahoma;
-
 }
 
 .nav-menu{
-  
     border-width: 0 0 1px;
     background-color: #383838;
 }
@@ -196,3 +194,6 @@ hr {
     text-decoration: none;
 }
 
+.cart-full{
+	background: url("../img/cart-green.png") no-repeat;
+}
