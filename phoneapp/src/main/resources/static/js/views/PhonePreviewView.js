@@ -8,7 +8,7 @@ app.phonePreviewView = Backbone.View.extend({
     template: _.template($("#phonePreview").html()),
     
     events: {
-    	'click #add-btn' : 'addToCart'
+    	'click #addToCartBtn' : 'addToCart'
     },
     
     initialize: function(){

@@ -6,9 +6,9 @@ app.cartItemView = Backbone.View.extend({
     className: "row cartItem",
     
     events: {
-    	'click #button-add': 'increaseItemQuantity',
-    	'click #button-remove': 'decreaseItemQuantity',
-    	'click #button-delete': 'deleteItem'
+    	'click #add-btn': 'increaseItemQuantity',
+    	'click #remove-btn': 'decreaseItemQuantity',
+    	'click #delete-btn': 'deleteItem'
     },
     
     template: _.template($("#cartItem").html()),
