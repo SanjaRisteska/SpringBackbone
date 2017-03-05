@@ -11,12 +11,12 @@ app.Router = Backbone.Router.extend({
         $("#phonePreviewSection").hide();
         $("#shoppingCartSection").hide();
         $("#allPhones").show();
-        $("#filters").show();
+        $("#subheader").show();
     },
     
     previewPhone: function(phoneLink){
         $("#allPhones").hide();
-        $("#filters").hide();
+        $("#subheader").hide();
         $("#shoppingCartSection").hide();
         var previewModel = _.first(phonesGroup.where({link: phoneLink}));
         var pPreview = new app.phonePreviewView({model : previewModel});
@@ -27,7 +27,7 @@ app.Router = Backbone.Router.extend({
     showMyCart : function(){
     	  $("#phonePreviewSection").hide();
           $("#allPhones").hide();
-          $("#filters").hide();
+          $("#subheader").hide();
           
           var shoppingCartView = new app.shoppingCartView({collection: itemsCollection});
           $("#shoppingCartSection").show();

@@ -1,18 +1,20 @@
-$("#filter-dropdown").change(function(){
+/*$("#filter-dropdown").change(function(){
 	
 	var filterBy = $("#filter-dropdown option:selected").val();
 	
 	var filteredPhones = _.filter(phonesGroup.models, function(model){
 		return model.get("manufacturer").toLowerCase() === filterBy;
 	});
-	
+	if(filterBy === 'all' && filteredPhones.length == 0){
+		filteredPhones = phonesGroup.models;
+	}
 	var filteredPhonesGroup = new app.phonesCollection(filteredPhones);
 	phonesGroupView.postLayoutRender(filteredPhonesGroup);
 	
-});
+});*/
 
 
-$("#sort-dropdown").change(function(){
+/*$("#sort-dropdown").change(function(){
 	var sortedPhones = [];
 	var sort = $("#sort-dropdown option:selected").val();
 	switch(sort){
@@ -47,4 +49,4 @@ $("#sort-dropdown").change(function(){
 	var sortedPhonesGroup = new app.phonesCollection(sortedPhones);
 	phonesGroupView.postLayoutRender(sortedPhonesGroup);
 	
-});
+});*/

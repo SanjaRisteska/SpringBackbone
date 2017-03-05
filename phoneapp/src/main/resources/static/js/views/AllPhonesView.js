@@ -23,12 +23,8 @@ app.allPhonesView = Backbone.View.extend({
     
     postLayoutRender: function(phoneCollection){
     	this.$el.empty();
-    	if(phoneCollection.length > 0){
-    		phoneCollection.each(this.addPhone, this);
-        	$("#allPhones").html(this.el);
-    	}else{
-    		this.render();
-    	}
+    	this.collection = phoneCollection;
+    	this.render();
     },
     
     addPhone: function(phone){
