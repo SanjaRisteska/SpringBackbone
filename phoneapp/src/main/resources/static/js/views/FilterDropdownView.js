@@ -4,7 +4,7 @@ app.filterDropdownView = Backbone.View.extend({
 	
 	tagName: "div",
 	id: "filter",
-    className: "col-md-6",
+    className: "row",
 	
     events: {},
     

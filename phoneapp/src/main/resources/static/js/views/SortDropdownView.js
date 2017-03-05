@@ -4,7 +4,7 @@ app.sortDropdownView = Backbone.View.extend({
 	
 	tagName: "div",
 	id: "sort",
-    className: "col-md-6",
+    className: "row",
 	
     events: {},
     
