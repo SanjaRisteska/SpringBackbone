@@ -8,12 +8,18 @@ app.itemsCollection = Backbone.Collection.extend({
     initialize: function(){
         this.fetch();
         this.bind("add remove", function(e){
-        	if(this.length > 0){
+        	if(this.length == 0){
+        		//TODO custom event
+        		Backbone.trigger('emptyCart', this);
+        	}else if(this.length > 0){
         		$('#cartIcon').attr('src','../img/cart-green.png');
         	}else{
         		$('#cartIcon').attr('src','../img/cart.png');
         	}
         });
+        
     }
+
+
     
 });

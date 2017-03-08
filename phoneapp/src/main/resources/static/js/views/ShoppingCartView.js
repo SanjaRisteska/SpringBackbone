@@ -6,6 +6,7 @@ app.shoppingCartView = Backbone.View.extend({
     
     initialize: function(){
       this.render();
+      Backbone.on('emptyCart', this.onEmptyCart, this);
     },
     
     render: function(){
@@ -16,6 +17,10 @@ app.shoppingCartView = Backbone.View.extend({
     addCartItem: function(cartItem){
         var cartItemView =  new app.cartItemView({ model: cartItem });
         this.$el.append(cartItemView.render().el);
+    },
+    
+    onEmptyCart: function(caller){
+    	alert("Cart is empty!");
     }
    
     
