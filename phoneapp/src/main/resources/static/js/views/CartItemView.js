@@ -14,7 +14,7 @@ app.cartItemView = Backbone.View.extend({
     template: _.template($("#cartItem").html()),
     
     initialize: function(){
-    	this.listenTo(this.model, 'sync', this.render);
+		this.model.on("change:quantity", this.render, this);
     },
     
     render: function(){
@@ -29,11 +29,7 @@ app.cartItemView = Backbone.View.extend({
         		return item.id == that.model.id;
         });
         cartItem.set('quantity', cartItem.get('quantity') + 1);
-    	cartItem.save({},{
-    		success: function(model, response){
-    			itemsCollection.fetch();
-    		}
-    	});
+    	cartItem.save();
     },
     
     decreaseItemQuantity: function(){
@@ -46,11 +42,7 @@ app.cartItemView = Backbone.View.extend({
         	that.deleteItem();
         	return;
         }else{
-    	cartItem.save({},{
-    		success: function(model, response){
-    			itemsCollection.fetch();
-    		}
-    		});
+    	cartItem.save();
         }
     },
     
@@ -61,7 +53,10 @@ app.cartItemView = Backbone.View.extend({
            });
     	cartItem.destroy({
     		contentType: 'application/json',
-    		data: JSON.stringify(cartItem)
+    		data: JSON.stringify(cartItem),
+    		success: function(){
+    			Backbone.trigger("updateCartIndicator");
+    		}
     	});
    	}
     

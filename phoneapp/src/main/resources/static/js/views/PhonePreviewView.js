@@ -33,7 +33,11 @@ app.phonePreviewView = Backbone.View.extend({
         }
     	cartItem.save({},{
     		success: function(model, response){
-    			itemsCollection.fetch();
+    			itemsCollection.fetch({
+    				success: function(){
+    					Backbone.trigger("updateCartIndicator");
+    				}
+    			});
     		}
     	});
     	
