@@ -1,13 +1,3 @@
 var app = app || {};
 
-app.filterDropdown = Backbone.Model.extend({
-
-    defaults:{
-       
-    },
-    
-    initialize : function(){
-        
-    }
-
-});
+app.filterDropdown = Backbone.Model.extend({});

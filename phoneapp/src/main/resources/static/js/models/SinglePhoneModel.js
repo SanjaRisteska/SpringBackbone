@@ -1,5 +1,3 @@
 var app = app || {};
 
-app.singlePhone = Backbone.Model.extend({   
-	
-});
+app.singlePhone = Backbone.Model.extend({});

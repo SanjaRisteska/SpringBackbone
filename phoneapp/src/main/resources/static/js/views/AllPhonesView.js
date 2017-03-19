@@ -4,9 +4,7 @@ app.allPhonesView = Backbone.View.extend({
 
     tagName: "section",
     
-    events: {
-    
-    },
+    events: {},
 
     initialize: function(){
         this.collection.bind("reset", _.bind(this.render, this));
