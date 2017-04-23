@@ -19,8 +19,10 @@ app.Router = Backbone.Router.extend({
         $("#subheader").hide();
         $("#shoppingCartSection").hide();
         var previewModel = _.first(phonesGroup.where({link: phoneLink}));
-        var pPreview = new app.phonePreviewView({model : previewModel});
-        $("#phonePreviewSection").html(pPreview.render().el);
+        if(!phonePreviewView){
+        	phonePreviewView = new app.phonePreviewView({model : previewModel});
+        }
+        $("#phonePreviewSection").html(phonePreviewView.render(previewModel).el);
         $("#phonePreviewSection").show();
     },
     
@@ -31,7 +33,9 @@ app.Router = Backbone.Router.extend({
           
           itemsCollection.fetch({
         	  success: function(){
-        		  var shoppingCartView = new app.shoppingCartView({collection: itemsCollection});
+        		  if(!shoppingCartView){
+        			  shoppingCartView = new app.shoppingCartView({collection: itemsCollection});
+        		  }
                   $("#shoppingCartSection").show();
         	  }
           });

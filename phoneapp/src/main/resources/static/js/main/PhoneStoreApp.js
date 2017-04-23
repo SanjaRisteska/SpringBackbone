@@ -14,6 +14,8 @@ $("#subheader").show();
 var phonesGroup = new app.phonesCollection();
 var phonesGroupView = new app.allPhonesView({collection: phonesGroup});
 var itemsCollection = new app.itemsCollection();
+var phonePreviewView;
+var shoppingCartView;
 
 var phonesRouter = new app.Router();
 

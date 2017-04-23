@@ -15,7 +15,10 @@ app.phonePreviewView = Backbone.View.extend({
       console.log("Phone preview view is created.");  
     },
     
-    render: function(){
+    render: function(previewModel){
+    	if(previewModel){
+    		this.model = previewModel;
+    	}
         var phonePreviewTemplate = this.template(this.model.toJSON());
         this.$el.html(phonePreviewTemplate);
         return this;
